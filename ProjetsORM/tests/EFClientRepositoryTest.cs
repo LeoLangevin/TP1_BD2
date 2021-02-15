@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProjetsORM.Entites;
 using ProjetsORM.Persistence;
+using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace ProjetsORM.AccesDonnees
@@ -11,7 +14,7 @@ namespace ProjetsORM.AccesDonnees
         private void CreerContexteEtReposDeTests()
         {
             var builder = new DbContextOptionsBuilder<ProjetsORMContexte>();
-            builder.UseInMemoryDatabase(databaseName: "client_db");   // Database en mémoire
+            builder.UseInMemoryDatabase(databaseName: "client_db2");   // Database en mémoire
             var contexte = new ProjetsORMContexte(builder.Options);
             repoClient = new EFClientRepository(contexte);
         }
@@ -19,20 +22,20 @@ namespace ProjetsORM.AccesDonnees
         [Fact]
         public void AjouterClient_DoitAjouterClient()
         {
-            /*
+           
             CreerContexteEtReposDeTests();
             Client coveo = new Client { NomClient = "Coveo", NoEnregistrement = 111, Ville = "Québec", CodePostal = "G3G1G1" };
 
             repoClient.AjouterClient(coveo);
 
             Assert.Equal(coveo, repoClient.RechercherClientParNom(coveo.NomClient));
-            */
+            /* */
         }
 
         [Fact]
         public void ObtenirClient_QuandClientExistePas()
         {
-            /*
+           
             CreerContexteEtReposDeTests();
             string nomClientARechercher = "Coveo";
             Client webLab = new Client { NomClient = "WebLab", NoEnregistrement = 1100, Ville = "Matane", CodePostal = "G5L1G1" };
@@ -43,13 +46,13 @@ namespace ProjetsORM.AccesDonnees
             repoClient.AjouterClient(spektrum);
 
             Assert.Throws<ArgumentException>(() => repoClient.ObtenirClient(nomClientARechercher));
-            */
+            /* */
         }
 
         [Fact]
         public void ObtenirClient_QuandClientExiste()
         {
-            /*
+            
             CreerContexteEtReposDeTests();
             string nomClientARechercher = "Coveo";
             Client webLab = new Client { NomClient = "WebLab", NoEnregistrement = 1100, Ville = "Matane", CodePostal = "G5L1G1" };
@@ -63,7 +66,7 @@ namespace ProjetsORM.AccesDonnees
 
             Assert.Equal(coveo, clientTrouve);
             Assert.Same(coveo, clientTrouve);
-            */
+            /**/
         }
 
         [Fact]
@@ -88,7 +91,7 @@ namespace ProjetsORM.AccesDonnees
         [Fact]
         public void RechercherClientParVille_QuandUnClient()
         {
-            /*
+            
             CreerContexteEtReposDeTests();
             string nomVilleARechercher = "Québec";
             Client webLab = new Client { NomClient = "WebLab", NoEnregistrement = 1100, Ville = "Matane", CodePostal = "G5L1G1" };
@@ -102,13 +105,13 @@ namespace ProjetsORM.AccesDonnees
             ICollection<Client> clientsTrouves = repoClient.RechercherClientParVille(nomVilleARechercher);
 
             Assert.Equal(clientsQuebec, clientsTrouves);
-            */
+           /* */
         }
 
         [Fact]
         public void RechercherClientParVille_QuandPlusieursClients()
         {
-            /*
+            
             CreerContexteEtReposDeTests();
             string nomVilleARechercher = "Québec";
             Client webLab = new Client { NomClient = "WebLab", NoEnregistrement = 1100, Ville = "Matane", CodePostal = "G5L1G1" };
@@ -128,7 +131,7 @@ namespace ProjetsORM.AccesDonnees
             ICollection<Client> clientsTrouves = repoClient.RechercherClientParVille(nomVilleARechercher);
 
             Assert.Equal(clientsQuebec, clientsTrouves);
-            */
+           /* */
         }
     }
 }

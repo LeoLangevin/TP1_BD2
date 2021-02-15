@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Cours Ste-Foy\\2020-21-H2021\\W49 - Bases de données II\\Travaux\\TP1 - ORM\\DépartH2021\\W49-H2021-SolutionTP1ORM\\ProjetsORM\\ProjetsORM.csproj": {}
+    "C:\\Users\\Leo Langevin\\Documents\\École\\Session 4\\Database 2\\W49-H2021-TP1ORM-Depart-master\\ProjetsORM\\ProjetsORM.csproj": {}
   },
   "projects": {
-    "C:\\Cours Ste-Foy\\2020-21-H2021\\W49 - Bases de données II\\Travaux\\TP1 - ORM\\DépartH2021\\W49-H2021-SolutionTP1ORM\\ProjetsORM\\ProjetsORM.csproj": {
+    "C:\\Users\\Leo Langevin\\Documents\\École\\Session 4\\Database 2\\W49-H2021-TP1ORM-Depart-master\\ProjetsORM\\ProjetsORM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Cours Ste-Foy\\2020-21-H2021\\W49 - Bases de données II\\Travaux\\TP1 - ORM\\DépartH2021\\W49-H2021-SolutionTP1ORM\\ProjetsORM\\ProjetsORM.csproj",
+        "projectUniqueName": "C:\\Users\\Leo Langevin\\Documents\\École\\Session 4\\Database 2\\W49-H2021-TP1ORM-Depart-master\\ProjetsORM\\ProjetsORM.csproj",
         "projectName": "ProjetsORM",
-        "projectPath": "C:\\Cours Ste-Foy\\2020-21-H2021\\W49 - Bases de données II\\Travaux\\TP1 - ORM\\DépartH2021\\W49-H2021-SolutionTP1ORM\\ProjetsORM\\ProjetsORM.csproj",
-        "packagesPath": "C:\\Users\\usager\\.nuget\\packages\\",
-        "outputPath": "C:\\Cours Ste-Foy\\2020-21-H2021\\W49 - Bases de données II\\Travaux\\TP1 - ORM\\DépartH2021\\W49-H2021-SolutionTP1ORM\\ProjetsORM\\obj\\",
+        "projectPath": "C:\\Users\\Leo Langevin\\Documents\\École\\Session 4\\Database 2\\W49-H2021-TP1ORM-Depart-master\\ProjetsORM\\ProjetsORM.csproj",
+        "packagesPath": "C:\\Users\\Leo Langevin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leo Langevin\\Documents\\École\\Session 4\\Database 2\\W49-H2021-TP1ORM-Depart-master\\ProjetsORM\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\usager\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leo Langevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

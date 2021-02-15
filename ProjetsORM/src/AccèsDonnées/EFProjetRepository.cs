@@ -3,39 +3,46 @@ using ProjetsORM.Entites;
 using ProjetsORM.Persistence;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjetsORM.AccesDonnees
 {
     class EFProjetRepository
     {
         #region Propriétés
+
+        private ProjetsORMContexte contexte;
+
         #endregion Propriétés
 
         #region Constructeur
         public EFProjetRepository (ProjetsORMContexte contexte)
         {
+            this.contexte = contexte;
         }
         #endregion Constructeur
 
         #region Méthodes
         public void AjouterProjet(Projet projet)
         {
-            throw new NotImplementedException();
+            contexte.Projets.Add(projet);
+            contexte.SaveChanges();
         }
 
-        public Client ObtenirProjet(string nomProjet, string nomClient)
+        public Projet ObtenirProjet(string nomProjet, string nomClient)
         {
-            throw new NotImplementedException();
+            return contexte.Projets.Find(nomProjet, nomClient);
         }
 
         public void ModifierProjet(Projet projet)
         {
+
             throw new NotImplementedException();
         }
 
         public void SupprimerProjet(Projet projet)
         {
-            throw new NotImplementedException();
+            contexte.Projets.Remove(projet);
         }
 
         public decimal? ObtenirBudgetTotalPourUnClient(string nomClient)
