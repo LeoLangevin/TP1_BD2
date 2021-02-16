@@ -43,11 +43,6 @@ namespace ProjetsORM.AccesDonnees
             return reponse;
         }
 
-        internal void AjouterProjet(Projet projetX)
-        {
-            throw new NotImplementedException();
-        }
-
         public ICollection<Employe> RechercherTousEmployes()
         {
             return contexte.Employes.ToList();
@@ -60,14 +55,14 @@ namespace ProjetsORM.AccesDonnees
 
         public ICollection<Employe> RechercherTousSuperviseurs()
         {
-            //return contexte.Employes.GroupBy(superviseur => superviseur.Superviseur).ToList();
-
-            throw new NotImplementedException();
+            return contexte.Employes.Where(employe => employe.NoSuperviseur != null).ToList();
         }
 
         public ICollection<Employe> ObtenirEmployesSupervises(short superviseurId)
         {
-            throw new NotImplementedException();
+            return contexte.Employes.Where(employe => employe.Superviseur != null).ToList();
+            //return contexte.Employes.Select(superviseur => superviseur.NoSuperviseur == superviseurId).Where(employe => employe.Superviseur != null).ToList();
+
         }
         #endregion Méthodes
     }

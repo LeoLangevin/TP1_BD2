@@ -67,12 +67,14 @@ namespace ProjetsORM.AccesDonnees
 
         public ICollection<Projet> ObtenirProjetsEnCoursPourUnClient(string nomClient)
         {
-            throw new NotImplementedException();
+            DateTime now = DateTime.Now;
+            return contexte.Clients.Find(nomClient).Projets.Where(client => client.DateDebut <= now && client.DateFin >= now).ToList();
         }
 
         public ICollection<StatsClient> RechercherClientsAvecNombreProjetsEtBudgetTotalEtBudgetMoyen()
         {
             throw new NotImplementedException();
+            //Genre Monsieur, what?
         }
     }
     #endregion Méthodes

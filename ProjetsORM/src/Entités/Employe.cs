@@ -56,6 +56,7 @@ namespace ProjetsORM.Entites
         public Employe()
         {
             Projets = new List<Projet>();
+            Superviseur = null;
         }
         #endregion Constructeur
 

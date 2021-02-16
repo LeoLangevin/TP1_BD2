@@ -36,29 +36,35 @@ namespace ProjetsORM.AccesDonnees
 
         public void ModifierProjet(Projet projet)
         {
-
-            throw new NotImplementedException();
+            contexte.Projets.Update(projet);
+            contexte.SaveChanges();
         }
 
         public void SupprimerProjet(Projet projet)
         {
             contexte.Projets.Remove(projet);
+            contexte.SaveChanges();
         }
 
         public decimal? ObtenirBudgetTotalPourUnClient(string nomClient)
         {
-            throw new NotImplementedException();
+            return contexte.Clients.Find(nomClient).Projets.Where(client => client.Budget != null).Sum(client => client.Budget);
         }
 
         public decimal? ObtenirBudgetMoyenPourUnClient(string nomClient)
         {
-            throw new NotImplementedException();
+            return contexte.Clients.Find(nomClient).Projets.Where(client => client.Budget != null).Average(client => client.Budget);
         }
 
         public ICollection<StatsClient> RechercherClientsAvecNombreProjetsEtBudgetTotalEtBudgetMoyen()
         {
-            throw new NotImplementedException();
-
+            return (ICollection<StatsClient>)contexte.Projets.GroupBy(projet => projet.NomClient).Select(groupe => new
+            {
+                NomCLient = groupe.Key,
+                NombreProjets = groupe.Count(),
+                BudgetTotal = ObtenirBudgetTotalPourUnClient(groupe.Key),
+                BudgetMoyen = ObtenirBudgetMoyenPourUnClient(groupe.Key)
+            }).ToList();
         }
         #endregion Méthodes
     }

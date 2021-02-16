@@ -24,6 +24,8 @@ namespace ProjetsORM.Entites
         [Column(TypeName = "datetime")]
         public DateTime DateFin { get; set; }
 
+        public decimal? Budget { get; set; }
+
         [Required]
         public short NoGestionnaire { get; set; }
 

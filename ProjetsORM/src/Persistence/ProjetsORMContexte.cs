@@ -76,8 +76,8 @@ namespace ProjetsORM.Persistence
                 .WithMany(employ => employ.Projets)
                 .OnDelete(DeleteBehavior.Restrict);
             //Lien vers Client
-            builder.Entity<Projet>()
-                .HasKey(projet => new { projet.NomClient });
+            builder.Entity<Client>()
+                .HasKey(client => new { client.NomClient });
 
             //Lien vers Employé¸: "Gestionnaire"
 
